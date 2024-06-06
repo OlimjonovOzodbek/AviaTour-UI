@@ -12,8 +12,12 @@ export class TourService {
   constructor(private http : HttpClient) { }
 
   apiUrl = environment.apiUrl
-  
+
   getAllTours(pageIndex:number, pageSize:number) : Observable<TourModel[]>{
     return this.http.get<TourModel[]>(`${this.apiUrl}Tours/${pageIndex}/${pageSize}`);
+  }
+
+  getTourById(id:number) : Observable<TourModel>{
+    return this.http.get<TourModel>(`${this.apiUrl}Tours/${id}`)
   }
 }
