@@ -12,17 +12,17 @@ export class TourService {
 
   constructor(private http : HttpClient) { }
 
-  apiUrl = environment.apiUrl
+  apiUrl = environment.apiUrl + 'Tours/'
 
   getAllTours(pageIndex:number, pageSize:number) : Observable<TourModel[]>{
-    return this.http.get<TourModel[]>(`${this.apiUrl}Tours/${pageIndex}/${pageSize}`);
+    return this.http.get<TourModel[]>(`${this.apiUrl}${pageIndex}/${pageSize}`);
   }
 
   getTourById(id:number) : Observable<TourModel>{
-    return this.http.get<TourModel>(`${this.apiUrl}Tours/${id}`)
+    return this.http.get<TourModel>(`${this.apiUrl}${id}`)
   }
 
   deleteTour(id:number) : Observable<ResponseModel>{
-    return this.http.delete<ResponseModel>(`${this.apiUrl}Tours/${id}`);
+    return this.http.delete<ResponseModel>(`${this.apiUrl}${id}`);
   }
 }
