@@ -7,8 +7,8 @@ import { DestinationsComponent } from './components/destinations/destinations.co
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
 
 const routes: Routes = [
-  {path: 'singleTour/:id',component:SingleTourComponent},
   {path: '', component: HomeComponent},
+  {path: 'singleTour/:id', component: SingleTourComponent},
   {path: 'tours', component: ToursComponent},
   {path: 'destinations', component: DestinationsComponent},
   {path: '**', component: NotFoundComponent}
