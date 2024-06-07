@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { TourModel } from './interfaces/tourModel';
 import { environment } from '../../../environments/environment.development';
 import { ResponseModel } from '../../common-interfaces/responseModel';
+import { TourCreateModel } from './interfaces/tour-create-model';
+import { TourUpdateModel } from './interfaces/tour-update-model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +26,12 @@ export class TourService {
 
   deleteTour(id:number) : Observable<ResponseModel>{
     return this.http.delete<ResponseModel>(`${this.apiUrl}${id}`);
+  }
+  createTour(data:TourCreateModel) : Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(`${this.apiUrl}`, data);
+  }
+
+  updateTour(data:TourUpdateModel) : Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(`${this.apiUrl}`, data);
   }
 }
