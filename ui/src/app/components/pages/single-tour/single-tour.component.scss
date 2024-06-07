@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+.main-zone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pic-zone{
+    width: 550px;
+    height: 740px;
+    overflow: hidden;
+    position: relative;
+}
+.pic-zone img{
+    height: 100%;
+    width: 700px;
+    position: absolute;
+    left: -50px;
+}
+.main-title{
+    width: 500px;
+}

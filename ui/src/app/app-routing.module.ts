@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
 
 const routes: Routes = [
-  {path:''}
+  {path: 'singleTour/:id',component:SingleTourComponent}
 ];
 
 @NgModule({
