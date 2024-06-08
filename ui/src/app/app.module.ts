@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './components/static-components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/static-components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { ToursComponent } from './components/tours/tours.component';
-import { DestinationsComponent } from './components/destinations/destinations.component';
-import { ContactsComponent } from './components/contacts/contacts.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { ToursComponent } from './components/pages/tours/tours.component';
+import { DestinationsComponent } from './components/pages/destinations/destinations.component';
+import { ContactsComponent } from './components/pages/contacts/contacts.component';
+import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
 
 @NgModule({

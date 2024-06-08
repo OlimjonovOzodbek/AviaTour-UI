@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleTourComponent implements OnInit{
 
-  constructor(private tourService : TourService,private route: ActivatedRoute){ }
+  constructor(private tourService : TourService, private route: ActivatedRoute){ }
   
   ngOnInit(): void {
     this.route.paramMap.subscribe(params=>{
