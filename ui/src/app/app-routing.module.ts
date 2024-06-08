@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
 import { HomeComponent } from './components/pages/home/home.component';
-import { ToursComponent } from './components/tours/tours.component';
+import { ToursComponent } from './components/pages/tours/tours.component';
 import { DestinationsComponent } from './components/pages/destinations/destinations.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
 
