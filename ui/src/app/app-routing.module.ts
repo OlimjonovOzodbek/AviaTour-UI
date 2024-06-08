@@ -5,7 +5,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { ToursComponent } from './components/pages/tours/tours.component';
 import { DestinationsComponent } from './components/pages/destinations/destinations.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
+import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 
 const routes: Routes = [
   {path: 'tours/:id',component: SingleTourComponent},
