@@ -5,12 +5,14 @@ import { HomeComponent } from './components/home/home.component';
 import { ToursComponent } from './components/tours/tours.component';
 import { DestinationsComponent } from './components/destinations/destinations.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'singleTour/:id', component: SingleTourComponent},
   {path: 'tours', component: ToursComponent},
   {path: 'destinations', component: DestinationsComponent},
+  {path: 'about-us', component: AboutUsComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
