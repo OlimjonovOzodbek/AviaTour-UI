@@ -7,7 +7,7 @@ import { DestinationsComponent } from './components/pages/destinations/destinati
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
 
 const routes: Routes = [
-  {path: 'singleTour/:id',component:SingleTourComponent},
+  {path: 'tours/:id',component: SingleTourComponent},
   {path: 'tours', component: ToursComponent},
   {path: 'destinations', component: DestinationsComponent},
   {path: '', component: HomeComponent},
