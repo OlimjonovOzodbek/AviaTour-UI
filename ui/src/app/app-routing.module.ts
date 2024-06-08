@@ -8,6 +8,7 @@ import { NotFoundComponent } from './components/static-components/not-found/not-
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 
 const routes: Routes = [
+  {path: '',component: HomeComponent},
   {path: 'tours/:id',component: SingleTourComponent},
   {path: 'tours', component: ToursComponent},
   {path: 'destinations', component: DestinationsComponent},
