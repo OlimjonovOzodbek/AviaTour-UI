@@ -1,1 +1,15 @@
-<app-navbar></app-navbar>
+<section>
+  <div class="container">
+    <ul class="cards">
+        @for(tour of tours; track tour.id){
+            <li class="one-card" (click)="redirectToSingle(tour.id)">
+                <img [src]="'https://localhost:7053' + tour.picturePath" alt="Picture">
+                <div class="title-zone">
+                    <h2>{{tour.whereEx}}</h2>
+                    <span>From: {{tour.price}} UZS</span>
+                </div>
+            </li>
+        }
+    </ul>
+  </div>
+</section>
