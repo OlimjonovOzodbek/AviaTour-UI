@@ -13,7 +13,7 @@ import { ContactsComponent } from './components/pages/contacts/contacts.componen
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
 import { LoginComponent } from './components/pages/login/login.component';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthService, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialAu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleSigninButtonModule
   ],
   providers: [
     SocialAuthService,
