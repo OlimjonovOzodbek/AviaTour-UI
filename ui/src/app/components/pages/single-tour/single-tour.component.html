@@ -1,20 +1,51 @@
 <section>
     <div class="container main-zone">
         <div class="pic-zone">
-            <img [src]="'https://localhost:7053' + tour.picturePath" alt="">
+            <a target="_blank" [href]="'https://localhost:7053' + tour.picturePath">
+                <img [src]="'https://localhost:7053' + tour.picturePath" alt="">
+            </a>
         </div>
         <div class="main-title">
             <h2>{{tour.whereEx}}</h2>
-            <span>{{tour.price}}</span>
-
+            <span>{{tour.price}} UZS</span>
             <hr>
+            <p>{{tour.subtitle}} </p>
+            <form action="">
+                <label for="" class="form-lbl">
+                    Your Name<br>
+                    <input type="text">
+                </label>
 
-            <p>{{tour.subtitle}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam corporis itaque doloremque expedita iure esse dolore quibusdam. Aperiam porro voluptatem eaque corporis, doloremque eos distinctio mollitia inventore non. Maxime quia doloribus explicabo, qui eligendi, expedita, accusantium id eveniet quidem repellat soluta sunt. Amet hic natus quos sint necessitatibus saepe. Consectetur autem eligendi aperiam nam sed non necessitatibus laborum reiciendis esse aspernatur magnam explicabo, in ad architecto cum sint dolor minus, beatae commodi omnis rem fugiat quibusdam. Et alias praesentium fugit odio nulla officia eos pariatur earum quisquam quos, incidunt sint blanditiis sequi molestiae laudantium hic, quod temporibus similique? Voluptate voluptatem vel sit doloremque, culpa repellat assumenda tempore numquam facere id velit quod libero aspernatur doloribus veritatis amet at incidunt nesciunt itaque ullam quo esse eveniet? Odit vitae neque illo iure. Nemo voluptas delectus a voluptates ipsam sunt dolorem, doloribus ut inventore sequi repudiandae dolores deleniti accusamus impedit earum, modi eligendi ratione animi autem omnis ipsum? Ratione commodi, labore nobis nihil quaerat odio officiis perspiciatis placeat dolorem veritatis mollitia! Repellat aliquam libero, consequatur cum nihil aliquid iure repudiandae. Cupiditate nemo doloremque numquam ullam quos similique temporibus aperiam velit illo eos magnam quae, deserunt qui praesentium consequuntur, expedita necessitatibus suscipit incidunt. Iusto, optio omnis fugit, culpa vitae ratione voluptate repudiandae et dignissimos cum nemo architecto sapiente reiciendis eaque at voluptates nihil maxime expedita! Eius beatae odio, recusandae aperiam accusamus veritatis ea quia nobis ratione voluptatem illum ad blanditiis at consequatur asperiores! Labore numquam vitae quo consectetur deserunt officiis dolore non aspernatur debitis dolorem, delectus esse harum quia maxime, explicabo dolor. Harum iusto, saepe sequi soluta ullam architecto quibusdam. Excepturi molestias nostrum quo doloremque. Nemo nobis est veniam rerum, cum amet minus dolorem aliquid, eius sequi nihil natus, tenetur officiis sed beatae eaque doloribus quod libero. Quod dolor repellat perferendis magni nisi, a cumque maiores architecto aspernatur esse, ab possimus voluptatibus porro! Modi ab consectetur dolore dolorum adipisci delectus vero quod quia pariatur laborum recusandae, dignissimos corrupti corporis cumque magni dolores ad sapiente eius? Odit earum obcaecati incidunt fuga saepe esse ratione, quis laudantium optio ipsa consectetur soluta porro molestias quae veritatis. Soluta at nihil consectetur nisi! Nihil sed iste nostrum numquam ea asperiores doloremque nemo voluptates reiciendis tempore voluptate, nisi dolores est aliquam dicta maiores et aspernatur porro recusandae! Perferendis obcaecati, numquam quam, blanditiis, adipisci qui tempora nisi minima aut nemo ipsum maxime. Illo quo consequuntur dolorum eaque molestias eligendi ullam quisquam dicta hic similique ab reiciendis culpa voluptate est asperiores, accusantium quas eius amet suscipit ducimus, atque ex nemo velit! Praesentium rem aut hic quasi repellat, blanditiis eaque, soluta excepturi autem, a voluptatem esse! Earum voluptates sint quia ratione, dolorum incidunt quas sunt eius eveniet explicabo tenetur suscipit delectus, placeat assumenda magnam est reprehenderit qui, mollitia quaerat laborum tempora officiis! Laboriosam quisquam consequuntur non ratione deleniti cumque nesciunt voluptatibus ab dolore nulla rerum modi, laudantium culpa aliquam, voluptate molestiae tempore veniam id eveniet! Voluptatibus, nisi beatae placeat quam nulla ducimus velit sunt minus nostrum, at praesentium cumque voluptate aspernatur minima reiciendis.</p>
+                <label for="" class="form-lbl">
+                    Your e-mail<br>
+                    <input type="text">
+                </label>
+
+                <label for="" class="form-lbl">
+                    Your phone-number<br>
+                    <input type="text">
+                </label>
+                <button type="submit">To Book</button>
+            </form>
+            <hr>
         </div>
     </div>
     <div class="container">
-        <div class="description">
-            {{tour.description}}
+        <div class="desc-reviews">
+            <button type="button" (click)="changeTo()">Description</button>
+            <button type="button" (click)="changeTo()">Reviews</button>
         </div>
+        @if(isDescriptionVisible()){
+            <div class="description">
+                {{tour.description}}
+            </div>
+        }
+        @else {
+            @for(comment of comments; track comment.id){
+                <div>
+                    {{comment.message}}
+                </div>
+            }
+        }
     </div>
 </section>

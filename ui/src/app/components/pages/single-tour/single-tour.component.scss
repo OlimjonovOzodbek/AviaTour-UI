@@ -1,26 +1,113 @@
-*{
+* {
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.main-zone{
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1280px;
+}
+
+.main-zone {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
-.pic-zone{
+.pic-zone {
     width: 550px;
     height: 740px;
     overflow: hidden;
     position: relative;
 }
-.pic-zone img{
+
+.pic-zone img {
     height: 100%;
     width: 700px;
     position: absolute;
     left: -50px;
 }
-.main-title{
-    width: 500px;
+
+.main-title {
+    width: 600px;
+}
+
+.main-title h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.main-title {
+
+    hr {
+        border: 0.3px dotted #d8d6d6;
+    }
+
+    span {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .form-lbl {
+        font-size: 12px;
+        color: #999;
+        display: block;
+        margin-bottom: 20px;
+
+        input {
+            border: 0.5px solid #999;
+            padding: 5px;
+            width: 100%;
+            outline: none;
+            height: 40px;
+
+        }
+    }
+
+    button {
+        color: white;
+        background-color: royalblue;
+        padding: 10px 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: .3s ease all;
+
+        &:hover {
+            border: 1px solid royalblue;
+            color: royalblue;
+            background: white;
+        }
+    }
+}
+
+.desc-reviews {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1.5px solid royalblue;
+    margin-bottom: 24px;
+
+    button {
+        color: royalblue;
+        background-color: white;
+        padding: 10px 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: .3s ease all;
+
+        &:hover {
+            border: 1px solid royalblue;
+            color: white;
+            background: royalblue;
+        }
+    }
 }
