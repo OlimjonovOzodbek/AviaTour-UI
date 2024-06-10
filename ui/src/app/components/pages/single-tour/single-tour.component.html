@@ -32,11 +32,20 @@
     </div>
     <div class="container">
         <div class="desc-reviews">
-            <button type="submit">Description</button>
-            <button type="submit">Reviews</button>
+            <button type="button" (click)="changeTo()">Description</button>
+            <button type="button" (click)="changeTo()">Reviews</button>
         </div>
-        <div class="description">
-            {{tour.description}}
-        </div>
+        @if(isDescriptionVisible()){
+            <div class="description">
+                {{tour.description}}
+            </div>
+        }
+        @else {
+            @for(comment of comments; track comment.id){
+                <div>
+                    {{comment.message}}
+                </div>
+            }
+        }
     </div>
 </section>
