@@ -6,10 +6,14 @@ import { ToursComponent } from './components/pages/tours/tours.component';
 import { DestinationsComponent } from './components/pages/destinations/destinations.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { DashTourComponent } from './components/dashboard/dash-tour/dash-tour.component';
+import { SingleDashTourComponent } from './components/dashboard/dash-tour/single-dash-tour/single-dash-tour.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
   {path: 'tours/:id',component: SingleTourComponent},
+  {path: 'toursdash/:id',component: SingleDashTourComponent},
+  {path: 'toursdash',component:DashTourComponent},
   {path: 'tours', component: ToursComponent},
   {path: 'destinations', component: DestinationsComponent},
   {path: 'about-us', component: AboutUsComponent},

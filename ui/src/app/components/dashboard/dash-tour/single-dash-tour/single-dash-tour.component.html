@@ -1,0 +1,51 @@
+<section>
+    <div class="container main-zone">
+        <div class="pic-zone">
+            <a target="_blank" [href]="'https://localhost:7053' + tour.picturePath">
+                <img [src]="'https://localhost:7053' + tour.picturePath" alt="">
+            </a>
+        </div>
+        <div class="main-title">
+            <h2>{{tour.whereEx}}</h2>
+            <span>{{tour.price}} UZS</span>
+            <hr>
+            <p>{{tour.subtitle}} </p>
+            <form action="">
+                <label for="" class="form-lbl">
+                    Your Name<br>
+                    <input type="text">
+                </label>
+
+                <label for="" class="form-lbl">
+                    Your e-mail<br>
+                    <input type="text">
+                </label>
+
+                <label for="" class="form-lbl">
+                    Your phone-number<br>
+                    <input type="text">
+                </label>
+                <button type="submit">To Book</button>
+            </form>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <div class="desc-reviews">
+            <button type="button" (click)="changeTo()">Description</button>
+            <button type="button" (click)="changeTo()">Reviews</button>
+        </div>
+        @if(isDescriptionVisible()){
+            <div class="description">
+                {{tour.description}}
+            </div>
+        }
+        @else {
+            @for(comment of comments; track comment.id){
+                <div>
+                    {{comment.message}}
+                </div>
+            }
+        }
+    </div>
+</section>

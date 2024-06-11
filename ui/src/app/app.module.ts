@@ -12,6 +12,9 @@ import { DestinationsComponent } from './components/pages/destinations/destinati
 import { ContactsComponent } from './components/pages/contacts/contacts.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
+import { DashTourComponent } from './components/dashboard/dash-tour/dash-tour.component';
+import { DashCommentComponent } from './components/dashboard/dash-comment/dash-comment.component';
+import { SingleDashTourComponent } from './components/dashboard/dash-tour/single-dash-tour/single-dash-tour.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { NotFoundComponent } from './components/static-components/not-found/not-
     DestinationsComponent,
     ContactsComponent,
     AboutUsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DashTourComponent,
+    DashCommentComponent,
+    SingleDashTourComponent
   ],
   imports: [
     BrowserModule,
