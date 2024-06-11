@@ -31,7 +31,7 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, S
     NotFoundComponent,
     DashTourComponent,
     DashCommentComponent,
-    SingleDashTourComponent
+    SingleDashTourComponent,
     LoginComponent
   ],
   imports: [
@@ -66,3 +66,5 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, S
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//npm install @abacritt/angularx-social-login --legacy-peer-deps
