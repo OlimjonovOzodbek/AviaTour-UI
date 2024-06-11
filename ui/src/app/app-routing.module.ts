@@ -8,12 +8,15 @@ import { NotFoundComponent } from './components/static-components/not-found/not-
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { DashTourComponent } from './components/dashboard/dash-tour/dash-tour.component';
 import { SingleDashTourComponent } from './components/dashboard/dash-tour/single-dash-tour/single-dash-tour.component';
+import { LoginComponent } from './components/pages/login/login.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
-  {path: 'tours/:id',component: SingleTourComponent},
   {path: 'toursdash/:id',component: SingleDashTourComponent},
   {path: 'toursdash',component:DashTourComponent},
+  {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'tours/:id', component: SingleTourComponent},
   {path: 'tours', component: ToursComponent},
   {path: 'destinations', component: DestinationsComponent},
   {path: 'about-us', component: AboutUsComponent},
