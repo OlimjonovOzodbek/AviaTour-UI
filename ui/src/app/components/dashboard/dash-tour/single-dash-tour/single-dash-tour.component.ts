@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TourService } from '../../../../services/tours/tour.service';
 import { TourModel } from '../../../../services/tours/interfaces/tourModel';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommentModel } from '../../../../services/comments/interfaces/comment-model';
 
 @Component({
@@ -10,7 +10,7 @@ import { CommentModel } from '../../../../services/comments/interfaces/comment-m
   styleUrl: './single-dash-tour.component.scss'
 })
 export class SingleDashTourComponent implements OnInit{
-  constructor(private _service : TourService, private route : ActivatedRoute){}
+  constructor(private _service : TourService, private route : ActivatedRoute,private router : Router){}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params=>{
@@ -41,6 +41,13 @@ export class SingleDashTourComponent implements OnInit{
       localStorage.setItem("revordesc","rev");
     else
       localStorage.setItem("revordesc","desc")
+  }
+
+  deleteTour(id:number){
+    this._service.deleteTour(id).subscribe((data)=>{
+      console.log(data);
+    });
+    this.router.navigateByUrl("/toursdash");
   }
 
   isDescriptionVisible(): boolean {
