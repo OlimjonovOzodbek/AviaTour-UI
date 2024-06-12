@@ -17,6 +17,7 @@ import { DashCommentComponent } from './components/dashboard/dash-comment/dash-c
 import { SingleDashTourComponent } from './components/dashboard/dash-tour/single-dash-tour/single-dash-tour.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthService, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, S
     DashTourComponent,
     DashCommentComponent,
     SingleDashTourComponent,
-    LoginComponent
+    LoginComponent,
+    SingleTourComponent
   ],
   imports: [
     BrowserModule,

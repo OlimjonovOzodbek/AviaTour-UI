@@ -10,14 +10,6 @@ import { EmailserviceService } from './services/emails/emailservice.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  constructor(private _service : EmailserviceService){}
-  ngOnInit(): void {
-    this._service.GetAllEmails().
-    subscribe(
-      (data)=>
-      console.log(data)
-      );
-  }
+export class AppComponent {
   title = 'ui';
 }
