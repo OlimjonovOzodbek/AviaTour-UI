@@ -9,18 +9,19 @@ import { AboutUsComponent } from './components/pages/about-us/about-us.component
 import { DashTourComponent } from './components/dashboard/dash-tour/dash-tour.component';
 import { SingleDashTourComponent } from './components/dashboard/dash-tour/single-dash-tour/single-dash-tour.component';
 import { LoginComponent } from './components/pages/login/login.component';
+import { DashCommentComponent } from './components/dashboard/dash-comment/dash-comment.component';
 
 const routes: Routes = [
-  {path: '',component: HomeComponent},
-  {path: 'toursdash/:id',component: SingleDashTourComponent},
-  {path: 'toursdash',component:DashTourComponent},
-  {path: '', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'tours/:id', component: SingleTourComponent},
-  {path: 'tours', component: ToursComponent},
-  {path: 'destinations', component: DestinationsComponent},
-  {path: 'about-us', component: AboutUsComponent},
-  {path: '**', component: NotFoundComponent}
+  { path: '', component: HomeComponent },
+  { path: 'toursdash/:id', component: SingleDashTourComponent },
+  { path: 'commentdash', component: DashCommentComponent },
+  { path: 'toursdash', component: DashTourComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'tours/:id', component: SingleTourComponent },
+  { path: 'tours', component: ToursComponent },
+  { path: 'destinations', component: DestinationsComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
