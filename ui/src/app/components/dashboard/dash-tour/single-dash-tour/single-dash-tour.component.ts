@@ -1,3 +1,4 @@
+import { TourUpdateModel } from './../../../../services/tours/interfaces/tour-update-model';
 import { Component, OnInit } from '@angular/core';
 import { TourService } from '../../../../services/tours/tour.service';
 import { TourModel } from '../../../../services/tours/interfaces/tourModel';
@@ -21,6 +22,12 @@ export class SingleDashTourComponent implements OnInit{
           .subscribe((data)=>{
             this.tour = data;
             this.comments = data.comments;
+            this.updateModel.Id =  this.tour.id;
+            this.updateModel.WhereEx = this.tour.whereEx
+            this.updateModel.Where = this.tour.where
+            this.updateModel.Subtitle = this.tour.subtitle
+            this.updateModel.Description = this.tour.description
+            this.updateModel.Price = this.tour.price
           });
         }
         catch{
@@ -32,6 +39,15 @@ export class SingleDashTourComponent implements OnInit{
   tourId : string | null = '';
   tour !: TourModel;
   comments !: CommentModel[];
+
+  updateModel !: TourUpdateModel;
+
+  updateTour(){
+    this._service.updateTour(this.updateModel)
+    .subscribe((data)=>{
+      console.log(data);
+    });
+  }
 
   changeTo(){
     var item : string | null = localStorage.getItem("revordesc");
@@ -53,5 +69,12 @@ export class SingleDashTourComponent implements OnInit{
   isDescriptionVisible(): boolean {
     return localStorage.getItem('revordesc') === 'desc';
   }
+
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.updateModel.PicturePath = file;
+    }
+}
 
 }

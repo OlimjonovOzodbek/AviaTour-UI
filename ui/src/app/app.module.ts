@@ -18,6 +18,7 @@ import { SingleDashTourComponent } from './components/dashboard/dash-tour/single
 import { LoginComponent } from './components/pages/login/login.component';
 import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthService, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SingleTourComponent } from './components/pages/single-tour/single-tour.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    FormsModule
   ],
   providers: [
     SocialAuthService,
