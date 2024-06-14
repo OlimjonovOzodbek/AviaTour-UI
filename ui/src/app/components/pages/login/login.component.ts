@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
             //localStorage.clear();
             localStorage.setItem(this.tokenKey, response.token)
           }
-          this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['/home']);
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/']);
               setTimeout(() => {
               window.location.reload();
               }, 1);
