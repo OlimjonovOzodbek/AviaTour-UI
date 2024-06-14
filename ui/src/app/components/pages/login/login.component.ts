@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   sendTokenToAPI(provider: string, providerKey: string, email: string, firstName: string, lastName: string, photoUrl: string): void {
       this.http.post<any>(`${this.apiUrl}Auths/ExternalLogin`, { provider, providerKey, email, firstName, lastName, photoUrl }).subscribe(
         response => {
+          console.log(response);
           if (response.isSuccess) {
             //localStorage.clear();
             localStorage.setItem(this.tokenKey, response.token)
