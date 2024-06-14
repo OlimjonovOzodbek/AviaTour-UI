@@ -12,8 +12,13 @@ import { DestinationsComponent } from './components/pages/destinations/destinati
 import { ContactsComponent } from './components/pages/contacts/contacts.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { NotFoundComponent } from './components/static-components/not-found/not-found.component';
+import { DashTourComponent } from './components/dashboard/dash-tour/dash-tour.component';
+import { DashCommentComponent } from './components/dashboard/dash-comment/dash-comment.component';
+import { SingleDashTourComponent } from './components/dashboard/dash-tour/single-dash-tour/single-dash-tour.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthService, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,13 +31,18 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, S
     ContactsComponent,
     AboutUsComponent,
     NotFoundComponent,
+    DashTourComponent,
+    DashCommentComponent,
+    SingleDashTourComponent,
     LoginComponent,
+    SingleTourComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleSigninButtonModule
+    GoogleSigninButtonModule,
+    FormsModule
   ],
   providers: [
     SocialAuthService,
@@ -60,3 +70,5 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, S
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//npm install @abacritt/angularx-social-login --legacy-peer-deps

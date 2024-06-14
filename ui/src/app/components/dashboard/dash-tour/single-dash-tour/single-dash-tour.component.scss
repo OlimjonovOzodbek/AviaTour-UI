@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1280px;
+}
+
+.main-zone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pic-zone {
+    width: 550px;
+    height: 740px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pic-zone img {
+    height: 100%;
+    width: 700px;
+    position: absolute;
+    left: -50px;
+}
+
+.main-title {
+    width: 600px;
+}
+
+.main-title h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.main-title {
+
+    hr {
+        border: 0.3px dotted #d8d6d6;
+    }
+
+    span {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .form-lbl {
+        font-size: 12px;
+        color: #999;
+        display: block;
+        margin-bottom: 20px;
+
+        input {
+            border: 0.5px solid #999;
+            padding: 5px;
+            width: 100%;
+            outline: none;
+            height: 40px;
+
+        }
+    }
+
+    button {
+        color: white;
+        background-color: royalblue;
+        padding: 10px 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: .3s ease all;
+
+        &:hover {
+            border: 1px solid royalblue;
+            color: royalblue;
+            background: white;
+        }
+    }
+}
+
+.desc-reviews {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1.5px solid royalblue;
+    margin-bottom: 24px;
+
+    button {
+        color: royalblue;
+        background-color: white;
+        padding: 10px 50px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: .3s ease all;
+
+        &:hover {
+            border: 1px solid royalblue;
+            color: white;
+            background: royalblue;
+        }
+    }
+}
+
+.main-title {
+
+    .del-btn {
+        color: white;
+        background-color: red;
+        margin-right: 10px;
+
+        &:hover {
+            border-color: red;
+            color: red;
+        }
+    }
+
+    .upt-btn {
+        background-color: white;
+        color: yellow;
+        border-color: yellow;
+
+        &:hover {
+            border-color: #000;
+            color: #000;
+        }
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+    --vs-primary: 29 92 255;
+}
+
+/*Dialog Styles*/
+dialog {
+    padding: 1rem 3rem;
+    background: white;
+    max-width: 400px;
+    padding-top: 2rem;
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+    animation: fadeIn 1s ease both;
+
+    &::backdrop {
+        animation: fadeIn 1s ease both;
+        background: rgb(255 255 255 / 40%);
+        z-index: 2;
+        backdrop-filter: blur(20px);
+    }
+
+    .x {
+        filter: grayscale(1);
+        border: none;
+        background: none;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        transition: ease filter, transform 0.3s;
+        cursor: pointer;
+        transform-origin: center;
+
+        &:hover {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        padding: 0.5rem 0;
+
+        a {
+            &:visited {
+                color: rgb(var(--vs-primary));
+            }
+        }
+    }
+}
+
+/*General Styles*/
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+    background: url(https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=879&q=80) no-repeat center center;
+    background-size: cover;
+}
+
+button.primary {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #fff !important;
+    background: rgb(var(--vs-primary) / 100%);
+    padding: 13px 25px;
+    border-radius: 17px;
+    transition: background-color 0.1s ease;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -10px rgb(var(--vs-primary) / 50%);
+
+    &:hover {
+        box-shadow: 0 20px 20px -10px rgb(var(--vs-primary) / 50%);
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+dialog form {
+    display: block;
+    margin-bottom: 10px;
+
+    label {
+        display: block;
+    }
+}

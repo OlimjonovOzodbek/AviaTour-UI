@@ -32,6 +32,6 @@ export class TourService {
   }
 
   updateTour(data:TourUpdateModel) : Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(`${this.apiUrl}`, data);
+    return this.http.put<ResponseModel>(`${this.apiUrl}`, data);
   }
 }
