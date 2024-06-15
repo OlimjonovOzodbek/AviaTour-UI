@@ -165,4 +165,13 @@
     .pic-zone{
         margin-bottom: 20px;
     }
+    .main-title{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main-title{
+        width: 300px;
+    }
 }
