@@ -60,6 +60,8 @@ export class SingleDashTourComponent implements OnInit {
     });
   }
 
+  //#region forma
+  // file yuklash uchun formdata ishlatilgan sababi forma jonatiladi body sifatida
   updateTour() {
     if (this.isUpdateModelValid()) {
       const formData = new FormData();
@@ -83,6 +85,12 @@ export class SingleDashTourComponent implements OnInit {
     }
   }
 
+  // va buni ishlatilishi service da ham o'zgargan
+  //#endregion
+
+
+  //#region File uchun
+  //file yuklash uchun yozilgan
   onFileChange(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -95,6 +103,10 @@ export class SingleDashTourComponent implements OnInit {
            this.updateModel.Subtitle && this.updateModel.Description &&
            this.updateModel.PicturePath !== undefined;
   }
+  //yopilgan
+  //#endregion
+
+
   isDescriptionVisible(): boolean {
     return localStorage.getItem('revordesc') === 'desc';
   }
