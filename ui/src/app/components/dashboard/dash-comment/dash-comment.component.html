@@ -1,13 +1,23 @@
 <h3>Write Tour Id</h3>
 <div class="mb-3">
-    <label for="" class="form-label">Name</label>
+    <label for class="form-label">Tour Id</label>
     <input
-        type="text"
+        type="number"
         class="form-control"
-        name=""
-        id=""
+        name
+        id
         aria-describedby="helpId"
-        placeholder=""
-    />
-    <small id="helpId" class="form-text text-muted">Help text</small>
+        placeholder [(ngModel)]="tourid"/>
+    <button type="submit" (click)="getCommentsByTourId()">Submit</button>
+</div>
+
+<div class="cards">
+    @for(cmt of comments;track cmt.id){
+    <div class="card">
+        <button type="button" (click)="deleteComment(cmt.id)" class="del-btn">Delete</button>
+        <h1>{{cmt.from}}</h1>
+        <p>{{cmt.message}}</p>
+        <span>Read more</span>
+    </div>
+    }
 </div>

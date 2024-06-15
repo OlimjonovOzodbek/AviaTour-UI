@@ -4,5 +4,5 @@ export interface TourCreateModel {
     Subtitle: string;
     Description: string;
     Price: number;
-    PicturePath: Blob;
+    PicturePath?: Blob;
 }

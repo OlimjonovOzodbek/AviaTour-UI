@@ -1,9 +1,9 @@
 <section>
     <div class="container main-zone">
         <div class="pic-zone">
-            <!-- <a target="_blank" [href]="'https://localhost:7053' + tour.picturePath"> -->
+            <a target="_blank" [href]="'https://localhost:7053' + tour.picturePath">
                 <img [src]="'https://localhost:7053' + tour.picturePath.toString()" alt="rasm">
-            <!-- </a> -->
+            </a>
         </div>
         <div class="main-title">
             <button type="button" (click)="deleteTour(tour.id)" class="del-btn">Delete</button>
@@ -72,7 +72,7 @@
         <label for="pic">Picture
             <input type="file" name="pic" id="pic" [(ngModel)]="updateModel.PicturePath" (change)="onFileChange($event)" accept="image/*">
         </label>
-        <button type="submit" style="background-color: green; color: aliceblue;">Update</button>
+        <button type="submit" style="background-color: green; color: aliceblue; cursor:pointer;">Update</button>
     </form>
 	<button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
 </dialog>
