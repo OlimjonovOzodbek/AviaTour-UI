@@ -4,6 +4,8 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from '../../../../environments/environment.development';
+import { AuthsService } from '../../../services/auths/auths.service';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,37 @@ import { environment } from '../../../../environments/environment.development';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router : Router, private socialAuthServiceConfig: SocialAuthService, private http: HttpClient){}
+  constructor(private router : Router, private socialAuthServiceConfig: SocialAuthService, private http: HttpClient, private authsService: AuthsService){}
 
   tokenKey = "token"
-  form!: FormGroup;
+  form !: FormGroup;
   fb = inject(FormBuilder);
+  decodedToken: any | null;
 
   apiUrl = environment.apiUrl;
+
+  login(){
+    this.authsService.login(this.form.value).subscribe(
+      {
+        next: (response) => {
+          console.log(response);
+
+          this.decodedToken = jwtDecode(localStorage.getItem(this.tokenKey)!)
+          if(this.decodedToken.role == 'Admin'){
+            console.log(this.decodedToken.role);
+            console.log(12)
+          }
+          else if(this.decodedToken.role == 'User'){
+            console.log(this.decodedToken.role);
+            console.log(12)
+
+          }}, error: (err) => {
+            alert(err.error.message)
+
+          }
+          
+        });       
+      }
 
   loginWithFacebook(): void {
     this.socialAuthServiceConfig.signIn(FacebookLoginProvider.PROVIDER_ID).then((user: SocialUser) => {
@@ -27,27 +53,8 @@ export class LoginComponent implements OnInit {
   }
 
   sendTokenToAPI(provider: string, providerKey: string, email: string, firstName: string, lastName: string, photoUrl: string): void {
-      this.http.post<any>(`${this.apiUrl}Auths/ExternalLogin`, { provider, providerKey, email, firstName, lastName, photoUrl }).subscribe(
-        response => {
-          console.log(response);
-          if (response.isSuccess) {
-            //localStorage.clear();
-            localStorage.setItem(this.tokenKey, response.token)
-          }
-          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['/']);
-              setTimeout(() => {
-              window.location.reload();
-              }, 1);
-          });
-        },
-        error => {
-          console.error('Error sending token', error);
-          // Handle error if needed
-        }
-      );
+      this.authsService.sendTokenToAPI(provider, providerKey, email, firstName, lastName, photoUrl);
   }
-
   
   ngOnInit(): void {
     this.form = this.fb.group({

@@ -10,17 +10,18 @@ import { DashTourComponent } from './components/dashboard/dash-tour/dash-tour.co
 import { SingleDashTourComponent } from './components/dashboard/dash-tour/single-dash-tour/single-dash-tour.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { DashCommentComponent } from './components/dashboard/dash-comment/dash-comment.component';
+import { authGuard, expireGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'toursdash/:id', component: SingleDashTourComponent },
-  { path: 'commentdash', component: DashCommentComponent },
-  { path: 'toursdash', component: DashTourComponent },
+  { path: '', component: HomeComponent, canActivate: [authGuard, expireGuard] },
+  { path: 'toursdash/:id', component: SingleDashTourComponent, canActivate: [authGuard, expireGuard] },
+  { path: 'commentdash', component: DashCommentComponent, canActivate: [authGuard, expireGuard] },
+  { path: 'toursdash', component: DashTourComponent, canActivate: [authGuard, expireGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'tours/:id', component: SingleTourComponent },
-  { path: 'tours', component: ToursComponent },
-  { path: 'destinations', component: DestinationsComponent },
-  { path: 'about-us', component: AboutUsComponent },
+  { path: 'tours/:id', component: SingleTourComponent, canActivate: [authGuard, expireGuard] },
+  { path: 'tours', component: ToursComponent, canActivate: [authGuard, expireGuard] },
+  { path: 'destinations', component: DestinationsComponent, canActivate: [authGuard, expireGuard] },
+  { path: 'about-us', component: AboutUsComponent, canActivate: [authGuard, expireGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 
