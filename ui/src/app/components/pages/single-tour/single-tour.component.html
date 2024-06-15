@@ -42,11 +42,14 @@
             </div>
         }
         @else {
-            @for(comment of comments; track comment.id){
-                <div>
-                    {{comment.message}}
-                </div>
-            }
+            <div class="cards">
+                @for(cmt of comments;track cmt.id){
+                <div class="card">
+                    <h1>{{cmt.from}}</h1>
+                    <p>{{ cmt.message.slice(0, 100) }}</p>
+                    <span>Read more</span>
+                </div>}
+            </div>
         }
     </div>
 </section>
