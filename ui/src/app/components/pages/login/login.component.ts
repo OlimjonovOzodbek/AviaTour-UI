@@ -29,12 +29,13 @@ export class LoginComponent implements OnInit {
   sendTokenToAPI(provider: string, providerKey: string, email: string, firstName: string, lastName: string, photoUrl: string): void {
       this.http.post<any>(`${this.apiUrl}Auths/ExternalLogin`, { provider, providerKey, email, firstName, lastName, photoUrl }).subscribe(
         response => {
+          console.log(response);
           if (response.isSuccess) {
             //localStorage.clear();
             localStorage.setItem(this.tokenKey, response.token)
           }
-          this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['/home']);
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/']);
               setTimeout(() => {
               window.location.reload();
               }, 1);
