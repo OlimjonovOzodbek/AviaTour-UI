@@ -54,3 +54,21 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 200;
 }
+
+.add-btn{
+    background-color: white;
+    border: 1px solid royalblue;
+    border-radius: 2px;
+    color: royalblue;
+    font-size: 10px;
+    width: 90px;
+    height: 45px;
+    transition: 0.3s ease all;
+
+    &:hover{
+        background-color: royalblue;
+        color: white;
+        box-shadow: 1px 1px 10px 1px royalblue;
+        cursor: pointer;
+    }
+}

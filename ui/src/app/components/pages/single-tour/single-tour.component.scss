@@ -157,3 +157,12 @@
     font-weight: 300;
     cursor: pointer;
 }
+
+@media screen and (max-width: 520px) {
+    .main-zone {
+        display: block;
+    }
+    .pic-zone{
+        margin-bottom: 20px;
+    }
+}
