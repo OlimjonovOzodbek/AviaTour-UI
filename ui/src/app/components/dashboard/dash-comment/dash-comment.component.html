@@ -17,7 +17,7 @@
         <button type="button" (click)="deleteComment(cmt.id)" class="del-btn">Delete</button>
         <h1>{{cmt.from}}</h1>
         <p>{{ cmt.message.slice(0, 100) }}</p>
-        <span style="cursor: pointer;" onclick="window.dialog.showModal()">Read more</span>
+        <span onclick="window.dialog.showModal()">Read more</span>
         <dialog id="dialog">
             <div class="card">
                 <h1>{{cmt.from}}</h1>
