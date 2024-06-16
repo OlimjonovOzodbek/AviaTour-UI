@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
@@ -13,6 +14,6 @@ export class BookingService {
   constructor(private http : HttpClient) { }
 
   postBooking(bookingModel:BookingModel){
-    this.http.post(this.apiUrl,bookingModel)
+    this.http.post(this.apiUrl, bookingModel)
   }
 }
