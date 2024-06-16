@@ -1,9 +1,9 @@
 <section>
     <div class="container main-zone">
         <div class="pic-zone">
-            <a target="_blank" [href]="'https://localhost:7053' + tour.picturePath">
+            <a *ngIf="tour?.picturePath" target="_blank" [href]="'https://localhost:7053' + tour.picturePath">
                 <img [src]="'https://localhost:7053' + tour.picturePath.toString()" alt="rasm">
-            </a>
+            </a>            
         </div>
         <div class="main-title">
             <button type="button" (click)="deleteTour(tour.id)" class="del-btn">Delete</button>
@@ -51,28 +51,27 @@
         }
     </div>
 </section>
-
 <dialog id="dialog">
-	<form *ngIf="tour" (ngSubmit)="updateTour()">
+    <form *ngIf="tour" (ngSubmit)="updateTour()">
         <label for="where-ex">Where Ex
-            <input type="text" id="where-ex" name="where-ex" [(ngModel)]="updateModel.WhereEx">
+            <input type="text" id="where-ex" name="where-ex" [(ngModel)]="updateModel.WhereEx" required>
         </label>
         <label for="where">Where
-            <input type="text" id="where" name="where" [(ngModel)]="updateModel.Where">
+            <input type="text" id="where" name="where" [(ngModel)]="updateModel.Where" required>
         </label>
         <label for="subt">Subtitle
-            <textarea type="text" id="subt" name="subt" [(ngModel)]="updateModel.Subtitle"></textarea>
+            <textarea id="subt" name="subt" [(ngModel)]="updateModel.Subtitle" required></textarea>
         </label>
         <label for="desc">Description
-            <textarea type="text" id="desc" name="desc" [(ngModel)]="updateModel.Description"></textarea>
+            <textarea id="desc" name="desc" [(ngModel)]="updateModel.Description" required></textarea>
         </label>
         <label for="price">Price
-            <input type="number" id="price" name="price" [(ngModel)]="updateModel.Price">
+            <input type="number" id="price" name="price" [(ngModel)]="updateModel.Price" required>
         </label>
         <label for="pic">Picture
-            <input type="file" name="pic" id="pic" [(ngModel)]="updateModel.PicturePath" (change)="onFileChange($event)" accept="image/*">
+            <input type="file" name="pic" id="pic" (change)="onFileChange($event)" accept="image/*" required>
         </label>
         <button type="submit" style="background-color: green; color: aliceblue; cursor:pointer;">Update</button>
     </form>
-	<button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+    <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
 </dialog>

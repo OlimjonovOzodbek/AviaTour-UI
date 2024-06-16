@@ -247,3 +247,12 @@ dialog form {
         display: block;
     }
 }
+
+@media screen and (max-width: 520px) {
+    .main-zone {
+        display: block;
+    }
+    .pic-zone{
+        margin-bottom: 20px;
+    }
+}

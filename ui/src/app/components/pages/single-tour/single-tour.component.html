@@ -2,29 +2,27 @@
 <section>
     <div class="container main-zone">
         <div class="pic-zone">
-            <!-- <a target="_blank" [href]="'https://localhost:7053' + tour.picturePath"> -->
+            <a *ngIf="tour?.picturePath" target="_blank" [href]="'https://localhost:7053' + tour.picturePath">
                 <img [src]="'https://localhost:7053' + tour.picturePath" alt="">
-            <!-- </a> -->
+            </a>
         </div>
         <div class="main-title">
             <h2>{{tour.whereEx}}</h2>
-            <span>{{tour.price}} UZS</span>
+            <span>{{getFormattedPrice(tour.price)}} UZS</span>
             <hr>
             <p>{{tour.subtitle}} </p>
-            <form action="">
-                <label for="" class="form-lbl">
+            <form *ngIf="tour" (ngSubmit)="bookTour()">
+                <label for="name" class="form-lbl">
                     Your Name<br>
-                    <input type="text">
+                    <input id="name" name="name" type="text" [(ngModel)]="book.name">
                 </label>
-
-                <label for="" class="form-lbl">
+                <label for="email" class="form-lbl">
                     Your e-mail<br>
-                    <input type="text">
+                    <input id="email" name="email" type="text" [(ngModel)]="book.email">
                 </label>
-
-                <label for="" class="form-lbl">
+                <label for="ph" class="form-lbl">
                     Your phone-number<br>
-                    <input type="text">
+                    <input id="ph" name="ph" type="text" [(ngModel)]="book.phoneNumber">
                 </label>
                 <button type="submit">To Book</button>
             </form>
@@ -42,6 +40,8 @@
             </div>
         }
         @else {
+
+            <form></form>
             <div class="cards">
                 @for(cmt of comments;track cmt.id){
                 <div class="card">

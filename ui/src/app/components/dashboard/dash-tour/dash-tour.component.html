@@ -1,5 +1,6 @@
 <section>
   <div class="container">
+    <button class="add-btn">Add New Tour</button>
     <ul class="cards">
       @for(tour of datas; track tour.id){
       <li class="one-card" (click)="redirectToSingle(tour.id)">
