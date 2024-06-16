@@ -8,20 +8,18 @@
         </div>
         <div class="main-title">
             <h2>{{tour.whereEx}}</h2>
-            <span>{{tour.price}} UZS</span>
+            <span>{{getFormattedPrice(tour.price)}} UZS</span>
             <hr>
             <p>{{tour.subtitle}} </p>
-            <form (ngSubmit)="bookTour()">
+            <form *ngIf="tour" (ngSubmit)="bookTour()">
                 <label for="name" class="form-lbl">
                     Your Name<br>
                     <input id="name" name="name" type="text" [(ngModel)]="book.name">
                 </label>
-
                 <label for="email" class="form-lbl">
                     Your e-mail<br>
                     <input id="email" name="email" type="text" [(ngModel)]="book.email">
                 </label>
-
                 <label for="ph" class="form-lbl">
                     Your phone-number<br>
                     <input id="ph" name="ph" type="text" [(ngModel)]="book.phoneNumber">
@@ -42,6 +40,8 @@
             </div>
         }
         @else {
+
+            <form></form>
             <div class="cards">
                 @for(cmt of comments;track cmt.id){
                 <div class="card">

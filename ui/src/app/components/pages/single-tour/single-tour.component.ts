@@ -60,6 +60,10 @@ export class SingleTourComponent implements OnInit{
       localStorage.setItem("revordesc","desc")
   }
 
+  getFormattedPrice(price: number): string {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
   isDescriptionVisible(): boolean {
     return localStorage.getItem('revordesc') === 'desc';
   }
