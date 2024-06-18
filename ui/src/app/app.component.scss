@@ -1,0 +1,69 @@
+.settings {
+    width: 45px;
+    height: 45px;
+    background-color: red;
+    border-radius: 20px;
+    top: 600px;
+    right: 10px;
+    position: fixed;
+    padding: 0 auto;
+    cursor: pointer;
+
+    svg {
+        width: 45px;
+        height: 45px;
+        margin: 0 auto;
+    }
+}
+
+//alert
+#alerts-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.alert-success {
+    background-color: #4CAF50;
+}
+
+.alert-info {
+    background-color: #2196F3;
+}
+
+.alert-warning {
+    background-color: #FF9800;
+}
+
+.alert-error {
+    background-color: #F44336;
+}
+
+.alert .close-btn {
+    float: right;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+}

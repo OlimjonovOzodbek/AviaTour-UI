@@ -1,11 +1,13 @@
+import { CommentCreateModel } from './../../../services/comments/interfaces/comment-create-model';
 import { Subject } from 'rxjs';
 import { BookingService } from './../../../services/booking/booking.service';
 import { TourModel } from './../../../services/tours/interfaces/tourModel';
 import { Component, Input, OnInit } from '@angular/core';
 import { TourService } from '../../../services/tours/tour.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommentModel } from '../../../services/comments/interfaces/comment-model';
 import { BookingModel } from '../../../services/booking/interfaces/booking-model';
+import { CommentService } from '../../../services/comments/comment.service';
 
 @Component({
   selector: 'app-single-tour',
@@ -14,7 +16,7 @@ import { BookingModel } from '../../../services/booking/interfaces/booking-model
 })
 export class SingleTourComponent implements OnInit{
 
-  constructor(private tourService : TourService, private route: ActivatedRoute,private _bookingService : BookingService){ }
+  constructor(private tourService : TourService,private _commentService : CommentService, private route: ActivatedRoute,private _bookingService : BookingService,private router: Router){ }
   
   book : BookingModel={
     name:"",
@@ -35,8 +37,11 @@ export class SingleTourComponent implements OnInit{
           });
         }
         catch{
-          console.log("something went wrong!")
+          console.log("Something went wrong!")
         }
+      }
+      else{
+        this.router.navigateByUrl('**')
       }});
       this.changeTo();
     }
@@ -44,6 +49,25 @@ export class SingleTourComponent implements OnInit{
   tourId : string  | null = "";
   tour !: TourModel;
   comments !: CommentModel[]
+
+  myComment : CommentCreateModel={
+    from : '',
+    message:'',
+    tourId:0
+  };
+
+  addMyComment(){
+      this.myComment.tourId = +this.tourId!;
+      this._commentService.createComment(this.myComment)
+      .subscribe((data)=>{
+        if(data.isSuccess == false){
+          alert("Something went wrong!");
+        }
+        else{
+          alert("Successfully added!")
+        }
+      });
+  }
   
   bookTour(){
     this.book.tourName = this.tour.whereEx;

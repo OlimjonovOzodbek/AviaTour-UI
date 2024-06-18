@@ -1,6 +1,6 @@
 <section>
   <div class="container">
-    <button class="add-btn">Add New Tour</button>
+    <button type="button" onclick="window.dialog.showModal()" class="add-btn">Add new Tour</button>
     <ul class="cards">
       @for(tour of datas; track tour.id){
       <li class="one-card" (click)="redirectToSingle(tour.id)">
@@ -17,3 +17,29 @@
     </ul>
   </div>
 </section>
+
+
+<dialog id="dialog">
+  <form (ngSubmit)="createTour()">
+      <label for="where-ex">Where Ex
+          <input type="text" id="where-ex" name="where-ex" [(ngModel)]="createModel.WhereEx" required>
+      </label>
+      <label for="where">Where
+          <input type="text" id="where" name="where" [(ngModel)]="createModel.Where" required>
+      </label>
+      <label for="subt">Subtitle
+          <textarea id="subt" name="subt" [(ngModel)]="createModel.Subtitle" required></textarea>
+      </label>
+      <label for="desc">Description
+          <textarea id="desc" name="desc" [(ngModel)]="createModel.Description" required></textarea>
+      </label>
+      <label for="price">Price
+          <input type="number" id="price" name="price" [(ngModel)]="createModel.Price" required>
+      </label>
+      <label for="pic">Picture
+          <input type="file" name="pic" id="pic" (change)="onFileChange($event)" accept="image/*" required>
+      </label>
+      <button type="submit" style="background-color: green; color: aliceblue; cursor:pointer;">Submit</button>
+  </form>
+  <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+</dialog>

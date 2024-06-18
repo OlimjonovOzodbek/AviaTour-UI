@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<!-- <app-tour-carusel></app-tour-carusel> -->
 <section>
     <div class="container main-zone">
         <div class="pic-zone">
@@ -41,7 +42,16 @@
         }
         @else {
 
-            <form></form>
+            <form (ngSubmit)="addMyComment()" class="commentForm">
+                <label for="c-email">
+                    <input type="c-email" id="c-email" name="email" [(ngModel)]="myComment.from" placeholder="exapmle@gmail.com or Name">
+                </label>
+                <label for="msg">
+                    <textarea id="msg" name="msg" [(ngModel)]="myComment.message" placeholder="Most beautiful city!"></textarea>
+                </label>
+
+                <button type="submit">Submit</button>
+            </form>
             <div class="cards">
                 @for(cmt of comments;track cmt.id){
                 <div class="card">

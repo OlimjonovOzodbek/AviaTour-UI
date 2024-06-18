@@ -20,6 +20,10 @@ export class TourService {
     return this.http.get<TourModel[]>(`${this.apiUrl}${pageIndex}/${pageSize}`);
   }
 
+  getToursByTop(size:number) : Observable<TourModel[]>{
+    return this.http.get<TourModel[]>(`${this.apiUrl}ByTop?size=${size}`);
+  }
+
   getTourById(id:number) : Observable<TourModel>{
     return this.http.get<TourModel>(`${this.apiUrl}${id}`)
   }
@@ -27,7 +31,7 @@ export class TourService {
   deleteTour(id:number) : Observable<ResponseModel>{
     return this.http.delete<ResponseModel>(`${this.apiUrl}${id}`);
   }
-  createTour(data:TourCreateModel) : Observable<ResponseModel>{
+  createTour(data:FormData) : Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${this.apiUrl}`, data);
   }
 
