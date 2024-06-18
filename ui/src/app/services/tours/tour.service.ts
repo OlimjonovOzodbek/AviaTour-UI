@@ -31,7 +31,7 @@ export class TourService {
   deleteTour(id:number) : Observable<ResponseModel>{
     return this.http.delete<ResponseModel>(`${this.apiUrl}${id}`);
   }
-  createTour(data:TourCreateModel) : Observable<ResponseModel>{
+  createTour(data:FormData) : Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${this.apiUrl}`, data);
   }
 
