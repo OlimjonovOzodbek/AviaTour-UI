@@ -19,7 +19,7 @@ export class AuthsService {
   tokenKey = "token"
 
   register(data: Register): Observable<Response> {
-    return this.http.post<Response>(`${this.apiUrl}Auths`, data).pipe(
+    return this.http.post<Response>(`${this.apiUrl}Auths/Register`, data).pipe(
       map((response) => {
         if (response.isSuccess == true) {
           console.log("Registered");
@@ -32,7 +32,7 @@ export class AuthsService {
 
   login(data: Login): Observable<TokenModel> {
     console.log("Hi!")
-    return this.http.post<TokenModel>(`${this.apiUrl}Auths`, data).pipe(
+    return this.http.post<TokenModel>(`${this.apiUrl}Auths/Login`, data).pipe(
       map((response) => {
         if (response.isSuccess) {
           //localStorage.clear();
@@ -94,8 +94,8 @@ export class AuthsService {
             //localStorage.clear();
             localStorage.setItem(this.tokenKey, response.token)
           }
-          this.router.navigateByUrl('/home', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['/home']);
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/']);
               setTimeout(() => {
               window.location.reload();
               }, 1);

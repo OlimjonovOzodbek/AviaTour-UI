@@ -32,19 +32,16 @@ export class LoginComponent implements OnInit {
           this.decodedToken = jwtDecode(localStorage.getItem(this.tokenKey)!)
           if(this.decodedToken.role == 'Admin'){
             console.log(this.decodedToken.role);
-            console.log(12)
           }
           else if(this.decodedToken.role == 'User'){
             console.log(this.decodedToken.role);
-            console.log(12)
-
-          }}, error: (err) => {
+          }
+        }, error: (err) => {
             alert(err.error.message)
 
           }
-          
         });       
-      }
+  }
 
   loginWithFacebook(): void {
     this.socialAuthServiceConfig.signIn(FacebookLoginProvider.PROVIDER_ID).then((user: SocialUser) => {
