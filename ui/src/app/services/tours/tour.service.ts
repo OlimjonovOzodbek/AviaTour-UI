@@ -20,6 +20,10 @@ export class TourService {
     return this.http.get<TourModel[]>(`${this.apiUrl}${pageIndex}/${pageSize}`);
   }
 
+  getToursByTop(size:number) : Observable<TourModel[]>{
+    return this.http.get<TourModel[]>(`${this.apiUrl}ByTop?size=${size}`);
+  }
+
   getTourById(id:number) : Observable<TourModel>{
     return this.http.get<TourModel>(`${this.apiUrl}${id}`)
   }

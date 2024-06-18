@@ -19,6 +19,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthService, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TourCaruselComponent } from './components/static-components/tour-carusel/tour-carusel.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashCommentComponent,
     SingleDashTourComponent,
     LoginComponent,
-    SingleTourComponent
+    SingleTourComponent,
+    TourCaruselComponent
   ],
   imports: [
     BrowserModule,

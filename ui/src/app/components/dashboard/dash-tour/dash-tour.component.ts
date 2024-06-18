@@ -24,7 +24,6 @@ export class DashTourComponent implements OnInit{
       this.datas = data;
     });
   }
-
   redirectToSingle(id:number){
     this.router.navigateByUrl(`toursdash/${id}`);
   }
