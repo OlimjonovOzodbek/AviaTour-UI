@@ -40,7 +40,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/login.js"
+              "src/assets/js/login.js",
+              "src/assets/js/alert.js"
             ]
           },
           "configurations": {

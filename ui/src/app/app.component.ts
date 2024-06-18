@@ -1,12 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TourService } from './services/tours/tour.service';
-import { ContactserviceService } from './services/Contact/contactservice.service';
-import { ContactCreate } from './services/Contact/interfaces/contact-create';
-import { AddressService } from './services/address/address.service';
-import { EmailserviceService } from './services/emails/emailservice.service';
 import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
 
+declare function showAlert(type:string,message:string) : void;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +11,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'ui';
   localToken = localStorage.getItem("token");
+
+  openDashboard(){
+    showAlert('warning','This is a success alert!')
+  }
 
   check() {
     try {
