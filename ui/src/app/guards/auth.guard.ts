@@ -59,7 +59,7 @@ export const adminGuard: CanActivateFn = (route, state) => {
   } else {
     try {
       const decodedToken: any = jwtDecode(localToken);
-      const role = decodedToken.role;
+      const role = decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
       if (role !== 'Admin') {
         inject(Router).navigateByUrl('/notfound');
         return false;
