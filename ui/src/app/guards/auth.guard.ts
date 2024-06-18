@@ -50,3 +50,25 @@ export const expireGuard: CanActivateFn = (route, state) => {
     return false;
   }
 };
+
+export const adminGuard: CanActivateFn = (route, state) => {
+  const localToken = localStorage.getItem(tokenKey);
+  if (!localToken || localToken === "") {
+    inject(Router).navigateByUrl('/login');
+    return false;
+  } else {
+    try {
+      const decodedToken: any = jwtDecode(localToken);
+      const role = decodedToken.role;
+      if (role !== 'Admin') {
+        inject(Router).navigateByUrl('/notfound');
+        return false;
+      }
+    } catch (error) {
+      console.error("Error decoding token:", error);
+      inject(Router).navigateByUrl('/login');
+      return false;
+    }
+  }
+  return true;
+};
