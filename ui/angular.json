@@ -41,7 +41,7 @@
             ],
             "scripts": [
               "src/assets/scripts/login.js",
-              "src/assets/js/alert.js"
+              "src/assets/scripts/alert.js"
             ]
           },
           "configurations": {
