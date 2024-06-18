@@ -40,7 +40,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/login.js"
+              "src/assets/scripts/login.js"
             ]
           },
           "configurations": {

@@ -49,7 +49,7 @@ form{
 }
 .form .field{
     position: relative;
-    height: 50px;
+    height: 48px;
     width: 100%;
     margin-top: 20px;
     border-radius: 6px;
@@ -124,32 +124,11 @@ form{
     color: #8b8b8b;
     padding: 0 15px;
 }
-.media-options a{
+
+.media-options{
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-a.facebook{
-    color: #232836;
-    background-color: #4267b2;
-    cursor: pointer;
-}
-a.facebook .facebook-icon{
-    height: 26px;
-    width: 26px;
-    color: #0171d3;
-    font-size: 20px;
-    border-radius: 50%;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #fff;
-}
-.facebook-icon{
-    position: absolute;
-    top: 50%;
-    left: 9px;
-    transform: translateY(-50%);
 }
 
 @media screen and (max-width: 400px) {

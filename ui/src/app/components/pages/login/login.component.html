@@ -23,13 +23,8 @@
         </div>
         <div class="line"></div>
         <div class="media-options">
-            <a (click)="loginWithFacebook()" class="field facebook" style="height: 42px; border-radius: 4px">
-                <i class='bx bxl-facebook facebook-icon'></i>
-                <span style="color: white; font-size: 15px;">Login with Facebook</span>
-            </a>
-        </div>
-        <div class="media-options" style="margin-top: 15px;">
-            <asl-google-signin-button type="standard" size="large" theme="outline" text="signin_with" shape="rectangular" logo_alignment="left"></asl-google-signin-button>
+            <asl-google-signin-button type="icon" size="large" theme="outline" text="signin_with" shape="rectangular" logo_alignment="left"></asl-google-signin-button>
+            <img src="../../../../assets/images/facebook.png" (click)="loginWithFacebook()" style="cursor: pointer; height: 40px; margin: 2px 0px 0px 25px;">
         </div>
     </div>
     <!-- Signup Form -->
