@@ -1,24 +1,27 @@
-<section class="container forms">
-    <div class="form login">
+<section class="container forms show-signup">
+    <div class="form signup">
         <div class="form-content">
-            <header>Login</header>
-            <form [formGroup]="form" (ngSubmit)="login()">
+            <header>Signup</header>
+            <form [formGroup]="form" (ngSubmit)="register()">
+                <div class="field input-field">
+                    <input type="text" formControlName="fullName" placeholder="Full name" class="input">
+                </div>
                 <div class="field input-field">
                     <input type="email" formControlName="email" placeholder="Email" class="input">
+                </div>
+                <div class="field input-field">
+                    <input type="text" formControlName="phoneNumber" placeholder="Phone" class="input">
                 </div>
                 <div class="field input-field">
                     <input type="password" formControlName="password" placeholder="Password" class="password">
                     <i class='bx bx-hide eye-icon'></i>
                 </div>
-                <div class="form-link">
-                    <a href="#" class="forgot-pass">Forgot password?</a>
-                </div>
                 <div class="field button-field">
-                    <button type="submit">Login</button>
+                    <button type="submit">Signup</button>
                 </div>
             </form>
             <div class="form-link">
-                <span>Don't have an account? <a routerLink="/register" class="link signup-link">Signup</a></span>
+                <span>Already have an account? <a routerLink="/login" class="link login-link">Login</a></span>
             </div>
         </div>
         <div class="line"></div>

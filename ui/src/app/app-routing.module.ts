@@ -12,6 +12,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { DashCommentComponent } from './components/dashboard/dash-comment/dash-comment.component';
 import { adminGuard, authGuard, expireGuard } from './guards/auth.guard';
 import { ContactsComponent } from './components/pages/contacts/contacts.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [authGuard, expireGuard] },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'commentdash', component: DashCommentComponent, canActivate: [authGuard, expireGuard, adminGuard] },
   { path: 'toursdash', component: DashTourComponent, canActivate: [authGuard, expireGuard, adminGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'tours/:id', component: SingleTourComponent, canActivate: [authGuard, expireGuard] },
   { path: 'tours', component: ToursComponent, canActivate: [authGuard, expireGuard] },
   { path: 'destinations', component: DestinationsComponent, canActivate: [authGuard, expireGuard] },

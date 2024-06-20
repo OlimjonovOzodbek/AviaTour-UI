@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, resolveForwardRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, Subject, map } from 'rxjs';
@@ -21,6 +21,7 @@ export class AuthsService {
   register(data: Register): Observable<Response> {
     return this.http.post<Response>(`${this.apiUrl}Auths/Register`, data).pipe(
       map((response) => {
+        console.log(response);
         if (response.isSuccess == true) {
           console.log("Registered");
         }
