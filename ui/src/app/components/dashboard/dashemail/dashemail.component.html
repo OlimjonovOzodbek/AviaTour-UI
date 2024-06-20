@@ -1,0 +1,21 @@
+<table style="border: 1px solid black; height: 400px; width: 420px;">
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            email
+        </th>
+    </tr>
+    @for(data of emails; track data.id)
+    {
+        <tr>
+            <td style="border: 1px solid black;">
+                {{data.id}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.emailAddress}}
+            </td>
+        </tr>
+    }
+</table>
