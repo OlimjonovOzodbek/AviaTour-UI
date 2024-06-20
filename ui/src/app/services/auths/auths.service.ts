@@ -76,7 +76,7 @@ export class AuthsService {
       .then((user: SocialUser) => {
         this.sendTokenToAPI(user.provider, user.id, user.email, user.firstName, user.lastName, user.photoUrl);
       })
-      .catch(error => {
+      .catch((error: Error) => {
         console.error('Error signing in with Google', error);
       });
   }

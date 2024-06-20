@@ -20,6 +20,8 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, S
 import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TourCaruselComponent } from './components/static-components/tour-carusel/tour-carusel.component';
+import { DashemailComponent } from './components/dashboard/dashemail/dashemail.component';
+import { DashadressComponent } from './components/dashboard/dashadress/dashadress/dashadress.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 
 @NgModule({
@@ -39,6 +41,8 @@ import { RegisterComponent } from './components/pages/register/register.componen
     LoginComponent,
     SingleTourComponent,
     TourCaruselComponent,
+    DashemailComponent,
+    DashadressComponent,
     RegisterComponent
   ],
   imports: [
