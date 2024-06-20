@@ -21,6 +21,7 @@ import { SingleTourComponent } from './components/pages/single-tour/single-tour.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TourCaruselComponent } from './components/static-components/tour-carusel/tour-carusel.component';
 import { DashemailComponent } from './components/dashboard/dashemail/dashemail.component';
+import { DashadressComponent } from './components/dashboard/dashadress/dashadress/dashadress.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DashemailComponent } from './components/dashboard/dashemail/dashemail.c
     LoginComponent,
     SingleTourComponent,
     TourCaruselComponent,
-    DashemailComponent
+    DashemailComponent,
+    DashadressComponent
   ],
   imports: [
     BrowserModule,
