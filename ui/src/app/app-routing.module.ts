@@ -14,6 +14,7 @@ import { adminGuard, authGuard, expireGuard } from './guards/auth.guard';
 import { ContactsComponent } from './components/pages/contacts/contacts.component';
 import { DashemailComponent } from './components/dashboard/dashemail/dashemail.component';
 import { DashadressComponent } from './components/dashboard/dashadress/dashadress/dashadress.component';
+import { DashcontactComponent } from './components/dashboard/dashcontact/dashcontact/dashcontact.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [authGuard, expireGuard] },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent, canActivate: [authGuard, expireGuard] },
   {path: 'emailadressdash', component: DashemailComponent, canActivate: [authGuard,expireGuard]},
   {path: 'addressdash', component: DashadressComponent, canActivate: [authGuard,expireGuard]},
+  {path: 'contactdash', component: DashcontactComponent},
   { path: '**', component: NotFoundComponent }
 ];
 
