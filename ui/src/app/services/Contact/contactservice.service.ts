@@ -16,7 +16,11 @@ export class ContactserviceService {
   apiUrl = environment.apiUrl
 
   
-  teContact(data: ContactCreate): Observable<ResponseModel>{
+  GetAllContact():Observable<ContactModel[]>{
+    return this.http.get<ContactModel[]>(`${this.apiUrl}Contact/GetAllContacts`)
+  }
+  CreateContact(data: ContactCreate): Observable<ResponseModel>{
     return this.http.post<ResponseModel>(`${this.apiUrl}Contact/CreateContact`,data)
+  
   }
 }
