@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/static-components/footer/footer.component';
@@ -23,7 +22,7 @@ import { TourCaruselComponent } from './components/static-components/tour-caruse
 import { DashemailComponent } from './components/dashboard/dashemail/dashemail.component';
 import { DashadressComponent } from './components/dashboard/dashadress/dashadress/dashadress.component';
 import { DashcontactComponent } from './components/dashboard/dashcontact/dashcontact/dashcontact.component';
-
+import { RegisterComponent } from './components/pages/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,8 @@ import { DashcontactComponent } from './components/dashboard/dashcontact/dashcon
     TourCaruselComponent,
     DashemailComponent,
     DashadressComponent,
-    DashcontactComponent
+    DashcontactComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
