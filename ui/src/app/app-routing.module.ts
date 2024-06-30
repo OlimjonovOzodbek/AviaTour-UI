@@ -29,8 +29,8 @@ const routes: Routes = [
   { path: 'destinations', component: DestinationsComponent, canActivate: [authGuard, expireGuard] },
   { path: 'contacts', component: ContactsComponent, canActivate: [authGuard, expireGuard] },
   { path: 'about-us', component: AboutUsComponent, canActivate: [authGuard, expireGuard] },
-  {path: 'emailadressdash', component: DashemailComponent, canActivate: [authGuard,expireGuard]},
-  {path: 'addressdash', component: DashadressComponent, canActivate: [authGuard,expireGuard]},
+  {path: 'emailadressdash', component: DashemailComponent}, 
+  {path: 'addressdash', component: DashadressComponent},
   {path: 'contactdash', component: DashcontactComponent},
   { path: '**', component: NotFoundComponent }
 ];

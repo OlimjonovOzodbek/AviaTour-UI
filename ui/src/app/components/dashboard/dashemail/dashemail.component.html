@@ -19,3 +19,9 @@
         </tr>
     }
 </table>
+<form (ngSubmit)="CreateEmail()" class="commentForm">
+    <label for="c-email">
+        <input type="c-email" id="c-email" name="email" [(ngModel)]="model.emailAddress" placeholder="exapmle@gmail.com or Name">
+    </label>
+    <button type="submit">Submit</button>
+</form>
