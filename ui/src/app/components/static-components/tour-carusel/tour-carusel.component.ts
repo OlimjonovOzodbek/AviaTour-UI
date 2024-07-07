@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class TourCaruselComponent implements OnInit {
 
-  size: number = 5;
-  slides: TourModel[] = [];
+  size: number = 3;
+  slides !: TourModel[];
   currentIndex: number = 0;
 
   constructor(private _service: TourService, private router: Router) { }
@@ -26,12 +26,24 @@ export class TourCaruselComponent implements OnInit {
     });
   }
 
-  nextSlide(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+  get transform() {
+    return `translateX(-${this.currentIndex * 100}%)`;
   }
 
-  prevSlide(): void {
-    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+  next() {
+    if (this.currentIndex < this.slides.length - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0;
+    }
+  }
+
+  prev() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = this.slides.length - 1;
+    }
   }
 
   navigateToTour(id: number): void {

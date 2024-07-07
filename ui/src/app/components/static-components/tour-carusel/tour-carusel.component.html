@@ -1,17 +1,10 @@
 <div class="carousel">
-  <div class="carousel-inner" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
-    <div *ngFor="let slide of slides" class="carousel-item" [ngStyle]="{'background-image': 'url(https://localhost:7053' + slide.picturePath + ')'}">
-      <div class="slider-content text-left">
-        <div class="container">
-          <div class="banner-title init-animate fadeInDown">{{ slide.where }}</div>
-          <div class="image-slider-caption init-animate fadeInDown"></div>
-          <a (click)="navigateToTour(slide.id)" class="init-animate fadeInDown btn btn-primary outline-outward banner-btn">
-            Read more <i class="fa fa-angle-right"></i>
-          </a>
-        </div>
-      </div>
+  <div class="carousel-inner" [style.transform]="transform">
+    <div class="carousel-item" *ngFor="let image of slides">
+      <img *ngIf="image!.picturePath" [src]="'https://localhost:7053' + image.picturePath" alt="Image">
+      <h2 class="carousel-caption" (click)="navigateToTour(image.id)">{{image.where}}</h2>
     </div>
   </div>
-  <button class="carousel-control-prev" (click)="prevSlide()">&#10094;</button>
-  <button class="carousel-control-next" (click)="nextSlide()">&#10095;</button>
+  <button class="carousel-control prev" (click)="prev()">‹</button>
+  <button class="carousel-control next" (click)="next()">›</button>
 </div>
