@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/static-components/footer/footer.component';
@@ -20,7 +19,10 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, S
 import { SingleTourComponent } from './components/pages/single-tour/single-tour.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TourCaruselComponent } from './components/static-components/tour-carusel/tour-carusel.component';
-
+import { DashemailComponent } from './components/dashboard/dashemail/dashemail.component';
+import { DashadressComponent } from './components/dashboard/dashadress/dashadress/dashadress.component';
+import { DashcontactComponent } from './components/dashboard/dashcontact/dashcontact/dashcontact.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,11 @@ import { TourCaruselComponent } from './components/static-components/tour-caruse
     SingleDashTourComponent,
     LoginComponent,
     SingleTourComponent,
-    TourCaruselComponent
+    TourCaruselComponent,
+    DashemailComponent,
+    DashadressComponent,
+    DashcontactComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<div style="display: flex;">
+    <table style="border: 1px solid black; height: 400px; width: 420px;">
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                phonenumber
+            </th>
+        </tr>
+        @for(data of contact; track data.id)
+        {
+            <tr>
+                <td style="border: 1px solid black;">
+                    {{data.id}}
+                </td>
+                <td style="border: 1px solid black;">
+                    {{data.phoneNumber}}
+                </td>
+                <button style="background-color: red;height: 40px; width: 50px; border-radius: 30%;">Delete</button>
+            </tr>
+        }
+    </table>
+    <div>hola</div>
+</div>

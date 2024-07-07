@@ -1,0 +1,57 @@
+<table style="border: 1px solid black; height: 400px; width: 420px;">
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            door
+        </th>
+        <th>
+            street
+        </th>
+        <th>
+            district
+        </th>
+        <th>
+            city
+        </th>
+        <th>
+            zipcode
+        </th>
+        <th>
+            latitude
+        </th>
+        <th>
+            longitude
+        </th>
+    </tr>
+    @for(data of address; track data.id)
+    {
+        <tr>
+            <td style="border: 1px solid black;">
+                {{data.id}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.door}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.street}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.district}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.city}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.zipCode}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.latitude}}
+            </td>
+            <td style="border: 1px solid black;">
+                {{data.longitude}}
+            </td>
+        </tr>
+    }
+</table>
