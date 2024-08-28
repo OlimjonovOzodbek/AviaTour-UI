@@ -1,3 +1,24 @@
 <app-navbar></app-navbar>
-<p>contacts works!</p>
+<div class="container">
+  <div class="box1">
+    <h2>Contact Info</h2>
+    <h3>Location:</h3>
+    <p>
+      {{ address.city }},{{ address.district }},{{ address.street }},{{
+        address.door
+      }}(our zip code : {{ address.zipCode }})
+    </p>
+    <h3>Email us:</h3>
+    @for (email of emails; track email.id) {
+    <p>{{ email.emailAddress }}</p>
+    }
+    <h3>Call number:</h3>
+    @for (call of contacts; track call.id) {
+    <p>{{ call.phoneNumber }}</p>
+    }
+  </div>
+  <div class="box2">
+    <!-- <app-map [latitude]="41.326536" [longitude]="41.326536"></app-map> -->
+  </div>
+</div>
 <app-footer></app-footer>

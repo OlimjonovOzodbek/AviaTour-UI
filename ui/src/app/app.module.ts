@@ -23,6 +23,7 @@ import { DashemailComponent } from './components/dashboard/dashemail/dashemail.c
 import { DashadressComponent } from './components/dashboard/dashadress/dashadress/dashadress.component';
 import { DashcontactComponent } from './components/dashboard/dashcontact/dashcontact/dashcontact.component';
 import { RegisterComponent } from './components/pages/register/register.component';
+import { MapComponent } from './components/pages/contacts/map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { RegisterComponent } from './components/pages/register/register.componen
     DashemailComponent,
     DashadressComponent,
     DashcontactComponent,
-    RegisterComponent
+    RegisterComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
